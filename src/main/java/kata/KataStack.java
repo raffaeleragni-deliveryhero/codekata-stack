@@ -11,4 +11,11 @@ public class KataStack {
   void push(String test) {
     size += 1;
   }
+
+  void pop() throws Exception {
+    if(size == 0){
+      throw new Exception("stack is empty!");
+    }
+    size = 0;
+  }
 }
