@@ -3,19 +3,27 @@ package kata;
 
 public class KataStack {
   int size = 0;
+  String[] items = new String[10];
 
   public int size() {
     return size;
   }
 
   void push(String test) {
+    if (size == 10) {
+      throw new IllegalStateException("overflow");
+    }
+    
+    items[size] = test;
     size += 1;
   }
 
-  void pop() throws Exception {
+  String pop() throws Exception {
     if(size == 0){
       throw new Exception("stack is empty!");
     }
-    size = 0;
+    size--;
+    
+    return items[size];
   }
 }

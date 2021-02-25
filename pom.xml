@@ -7,7 +7,7 @@
   <groupId>katas</groupId>
   <artifactId>template</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>template</name>
+  <name>codekata-stack</name>
   <description>template</description>
 
   <properties>

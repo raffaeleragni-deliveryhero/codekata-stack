@@ -49,4 +49,29 @@ class StackTest {
   }
 
 
+  @Test
+  void testPopReturnsCorrectItem() throws Exception {
+    stack.push("item1");
+    assertThat(stack.pop(), is("item1"));
+    
+    stack.push("item2");
+    assertThat(stack.pop(), is("item2"));
+  }
+  
+  @Test
+  void testPopTwoTimes() throws Exception {
+    stack.push("item1");
+    stack.push("item2");
+    
+    assertThat(stack.pop(), is("item2"));
+    assertThat(stack.pop(), is("item1"));
+  }
+  
+  @Test
+  void testOverflow() {
+    for (var i = 0;i < 10;i++)
+      stack.push("item" + i);
+    
+    assertThrows(IllegalStateException.class, () -> stack.push("item11"));
+  }
 }
